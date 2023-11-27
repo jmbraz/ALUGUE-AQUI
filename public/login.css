@@ -1,0 +1,201 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Inter', sans-serif;
+}
+
+
+body{
+    background-image: url('assets/Group\ \(1\).png');    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.logo > img{
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    left: 40%;
+    top: 0%;
+    z-index: 1;
+   max-width: 20%;
+   
+  
+   
+   
+}
+
+
+          .card{
+            position: relative;
+            width: 400px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            background: transparent;
+            background-color:#fff;
+           
+            
+          }
+          
+   
+
+         
+          h2{
+            font-size: 32px;
+            background:linear-gradient(90deg, #010105, #0B0C29, #111340, #1A1E64, #20257B, #20257B, #29309F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            padding-top: 20px;
+            
+          }
+
+      .inputbox{
+        position: relative;
+        margin: 30px 0;
+        width: 300px;
+        border-bottom: 2px solid#fff;
+        
+     
+        
+        
+      }
+
+
+      .inputbox input{
+        width: 87%;
+        height: 50px;
+        background: white;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        padding: 0 35px 0 5px;
+        color: #000;
+        
+        
+      }
+      .inputbox ion-icon{
+        position: absolute;
+        right: 8px;
+        color: #fff;
+        font-size: 1.2em;
+        top: 20px;
+        
+      }
+
+
+button{
+    width: 100%;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid #29309F;
+    font-weight: 600;
+    padding: 15px 19.5px 13px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    outline: none;
+    color: #29309F;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 0.45px;
+    font-weight: 700;
+
+    
+    
+}
+
+
+.forget{
+    display: flex;
+    justify-content: space-between;
+    margin: 37px 0 38px;
+    font-size: 0.9em;
+
+    
+    
+    
+}
+
+.forget label:nth-child(2){
+    order: 1;
+    color: #29309F; 
+    font-weight: bold;
+}
+
+.forget label{
+    display: flex;
+    align-items: center;
+}
+
+.forget label input[ type="checkbox"]{
+    margin-right: 6px
+}
+
+.forget label a {
+    color: #1F2373;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.forget label a:hover{
+    text-decoration: underline;
+}
+
+.register {
+    color: #000;
+    text-decoration:none;
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.register p a{
+    text-decoration: none;
+    color: #1F2373;
+    font-weight: 700;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+    
+}
+
+#feedbackDiv {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+
+
+
+

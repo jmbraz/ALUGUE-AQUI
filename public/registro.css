@@ -1,0 +1,119 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-image: url('assets/Group (1).png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: transparent;
+  background-color: #fff;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Aumentei o padding para liberar mais espaço interno */
+}
+
+h2 {
+  font-size: 32px;
+  background: linear-gradient(90deg, #010105, #0B0C29, #111340, #1A1E64, #20257B, #20257B, #29309F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 22px; /* Adicionei margem inferior para afastar do botão */
+  margin-top: 29px;
+}
+
+.inputbox {
+    position: relative;
+    margin: 14px 0;
+    width: 300px;
+    border-bottom: 2px solid#fff;
+}
+
+.inputbox input {
+  width: calc(100% - 12px); /* Ajustando espaço extra nos lados do input */
+  height: 40px;
+  font-size: 14px;
+  padding: 0 6px; /* Espaçamento interno ajustado */
+  border: none;
+  border-bottom: 1px solid #9B9B9B;
+  outline: none;
+}
+
+button {
+  width: calc(100% - 12px); /* Ajustando o botão para corresponder à largura do input */
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid #29309F;
+  font-weight: 700;
+  padding: 15px 19.5px 13px;
+  text-align: center;
+  outline: none;
+  color: #29309F;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.45px;
+  margin-top: 7px;
+  margin-bottom: 26px;
+}
+
+.register {
+  color: #000;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+}
+
+.register p a {
+  text-decoration: none;
+  color: #1F2373;
+  font-weight: 700;
+}
+
+.register p a:hover {
+  text-decoration: underline;
+}
+
+#registerFeedback {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
