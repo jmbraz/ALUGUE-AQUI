@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALUGUE-AQUI - Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .spacer {
+      margin-top: 30px;
+    }
+
+    h3{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-weight: 700;
+    }
+
+    h1{
+        font-weight: 700;
+        background:linear-gradient(90deg, #010105, #0B0C29, #111340, #1A1E64, #20257B, #20257B, #29309F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+
+    .text-center a{
+        font-weight: 700 !important;
+        color: #29309F;
+
+    }
+
+    /* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">Bem-vindo!</h1>
+  <p class="text-center">Estamos trabalhando nisso. <a href="https://github.com/jmbraz/">Aguarde por mais informações em breve!</a></p>
+  
+  <div class="spacer"></div>
+  
+  <h3>Usuários</h3>
+  <table class="table table-striped user-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Razão Social</th>
+        <th>Email</th>
+        <th>CNPJ</th>
+        <th>Telefone</th>
+        <th>Senha</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="users-table-body">
+      <!-- Aqui será preenchido dinamicamente com os usuários -->
+    </tbody>
+  </table>
+
+  <h3>Compras</h3>
+  <table class="table table-striped purchase-table">
+    <!-- ... (cabeçalho da tabela de compras) -->
+    <tbody id="purchases-table-body">
+      <!-- Aqui será preenchido dinamicamente com as compras do usuário selecionado -->
+    </tbody>
+  </table>
+
+  <!-- Formulário de Edição de Usuário (oculto por padrão) -->
+  <div id="editUserForm" style="display: none;">
+    <input type="hidden" id="userId">
+    <input type="text" id="userRazaoSocial">
+    <input type="email" id="userEmail">
+    <input type="text" id="userCnpj">
+    <input type="tel" id="userTelefone">
+    <input type="password" id="userSenha">
+    <button type="button" class="btn btn-primary" onclick="submitEditedUser()">Salvar</button>
+  </div>
+</div>
+<script>
+  function getUsers() {
+    fetch('/users')
+      .then(response => response.json())
+      .then(users => {
+        displayUsers(users);
+      })
+      .catch(error => console.error('Erro ao buscar usuários:', error));
+  }
+
+  function displayUsers(users) {
+    const usersTableBody = document.getElementById('users-table-body');
+    usersTableBody.innerHTML = '';
+
+    users.forEach(user => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.razaoSocial}</td>
+        <td>${user.email}</td>
+        <td>${user.cnpj}</td>
+        <td>${user.telefone}</td>
+        <td>${user.senha}</td>
+        <td>
+          <button class="btn btn-primary btn-sm mr-2" onclick="editUser('${user.id}')">Editar</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteUser('${user.id}')">Excluir</button>
+          <button class="btn btn-info btn-sm" onclick="viewPurchases('${user.id}')">Compras</button>
+        </td>
+      `;
+      usersTableBody.appendChild(row);
+    });
+  }
+
+  // Restante das funções como editUser, deleteUser, viewPurchases...
+
+  window.onload = function() {
+    getUsers();
+  };
+
+  function deleteUser(userId) {
+    fetch(`/users/${userId}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Usuário deletado:', data);
+        // Implemente a lógica para atualizar a interface após a exclusão do usuário
+        // Por exemplo: remover a linha correspondente na tabela
+        getUsers(); // Atualiza a lista de usuários após a exclusão
+      })
+      .catch(error => console.error('Erro ao excluir usuário:', error));
+  }
+
+  // Função para editar um usuário pelo ID
+  function editUser(userId) {
+    fetch(`/users/${userId}`)
+      .then(response => response.json())
+      .then(user => {
+        console.log('Dados do usuário:', user);
+        fillEditForm(user); // Preencher formulário de edição com os dados do usuário
+      })
+      .catch(error => console.error('Erro ao buscar usuário:', error));
+  }
+
+  // Função para visualizar as compras de um usuário pelo ID
+  function viewPurchases(userId) {
+    // Lógica para obter e exibir as compras do usuário com o ID especificado
+    // Exemplo simulado com dados estáticos:
+    const purchases = [
+      { idCompra: 1, idUsuario: userId, valor: 100 },
+      { idCompra: 2, idUsuario: userId, valor: 150 },
+      // ... adicione outras compras para este usuário
+    ];
+
+    const purchasesTableBody = document.getElementById('purchases-table-body');
+    purchasesTableBody.innerHTML = '';
+
+    purchases.forEach(purchase => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${purchase.idCompra}</td>
+        <td>${purchase.idUsuario}</td>
+        <td>${purchase.valor}</td>
+        <!-- Adicione mais colunas para informações das compras, se necessário -->
+      `;
+      purchasesTableBody.appendChild(row);
+    });
+  }
+
+  function editUser(userId) {
+    fetch(`/users/${userId}`)
+      .then(response => response.json())
+      .then(user => {
+        console.log('Dados do usuário:', user);
+        fillEditForm(user); // Preencher formulário de edição com os dados do usuário
+      })
+      .catch(error => console.error('Erro ao buscar usuário:', error));
+  }
+
+  function fillEditForm(user) {
+    const editForm = document.getElementById('editUserForm');
+    editForm.style.display = 'block'; // Mostrar formulário de edição
+
+    // Preencher os campos do formulário com os dados do usuário
+    // Por exemplo, se tiver campos de input com IDs 'userId', 'userEmail', etc.:
+    document.getElementById('userId').value = user.id;
+    document.getElementById('userRazaoSocial').value = user.razaoSocial;
+    document.getElementById('userEmail').value = user.email;
+    document.getElementById('userCnpj').value = user.cnpj;
+    document.getElementById('userTelefone').value = user.telefone;
+    document.getElementById('userSenha').value = user.senha;
+  }
+
+  // Função para enviar o formulário de edição de usuário
+  function submitEditedUser() {
+    // Lógica para enviar os dados atualizados do usuário para o servidor
+    // Você pode usar fetch ou outro método para enviar os dados atualizados
+    // Por exemplo, coletar os dados dos campos do formulário e fazer uma requisição PUT ou PATCH
+  }
+</script>
+
+</body>
+</html>
+</body>
+</html>

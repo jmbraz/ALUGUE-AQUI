@@ -65,7 +65,7 @@
 
 .dropdown-content {
   width: 400px;
-  height: 509px;
+  height: 588px;
   display: none;
   position: absolute;
   top: 41px;
@@ -207,6 +207,18 @@ height: 14px;
   margin-right: 20px;
 }
 
+.logo-text a{
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.bi.bi-arrow-return-right {
+  font-size: 10px; 
+  margin-right: 5px;
+
+}
+
 .login-link {
   font-size: 12px;
   font-weight: 700;
@@ -239,9 +251,12 @@ height: 14px;
   object-position: center bottom;
   transform: scale(1); /* Começa com a escala normal */
   transition: transform 3s ease-in-out; /* Adiciona uma transição suave */
-
   animation: zoomInOut 10s infinite alternate; /* Ativa a animação */
 
+}
+
+.bi-chevron-down {
+  font-size: 8px; /* Defina o tamanho desejado */
 }
 
 @keyframes zoomInOut {
@@ -453,7 +468,19 @@ height: 14px;
 .product img {
   display: block;
   margin: 0 auto;
+  margin-bottom: 25px;
 }
+
+/* Efeito de zoom */
+.product img {
+  transition: transform 0.3s;
+
+}
+
+.product img:hover {
+  transform: scale(1.1);
+}
+
 
 /* Centralizar botão 'Adicionar ao Carrinho' */
 .add-to-cart {
@@ -682,6 +709,7 @@ footer {
 .footer-contact {
   font-size: 14px;
   margin-top: 20px;
+  line-height: 20px;
 }
 
 .footer-newsletter {

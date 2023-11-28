@@ -11,9 +11,9 @@ let database = [
   {
     id: "1",
     razaoSocial: "dev",
-    email: "dev@alugueaki.com.br",
-    cnpj: "00000000000191",
-    telefone: "21968886093",
+    email: "dev@alugueaqui.com.br",
+    cnpj: "00000000000000",
+    telefone: "(21)96888-6093",
     senha: "dev@123456"
   },
 ];
@@ -23,11 +23,22 @@ app.get('/users', (request, response) => {
   response.json(database);
 });
 
+// Rota para obter um usuário pelo ID
+app.get('/users/:id', (request, response) => {
+  const userId = request.params.id;
+  const user = database.find(user => user.id === userId);
+
+  if (!user) {
+    return response.status(404).json({ error: 'Usuário não encontrado' });
+  }
+
+  response.json(user);
+});
+
 // Rota para cadastrar um novo usuário
 app.post("/users", (request, response) => {
   const body = request.body;
 
-  // Verificando se já existe um usuário com o mesmo e-mail
   const existingUser = database.find(user => user.email === body.email);
   if (existingUser) {
     return response.status(400).json({ error: 'Esta conta já foi cadastrada' });
@@ -56,7 +67,6 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ error: 'Credenciais inválidas' });
   }
 
-  // Configurando um cookie para indicar que o usuário está autenticado
   res.cookie('loggedIn', 'true', { httpOnly: true });
   res.json({ message: 'Login bem-sucedido!', user });
 });
@@ -64,7 +74,37 @@ app.post('/login', (req, res) => {
 // Rota para fazer logout
 app.get('/logout', (req, res) => {
   res.clearCookie('loggedIn');
-  res.redirect('/'); // Redirecionar para a página inicial após o logout
+  res.redirect('/'); 
+});
+
+// Rota para atualizar um usuário pelo ID usando o método PATCH
+app.patch('/users/:id', (request, response) => {
+  const userId = request.params.id;
+  const body = request.body;
+
+  let userIndex = database.findIndex(user => user.id === userId);
+
+  if (userIndex === -1) {
+    return response.status(404).json({ error: 'Usuário não encontrado' });
+  }
+
+  database[userIndex] = { ...database[userIndex], ...body };
+
+  response.json({ message: 'Informações do usuário atualizadas com sucesso', user: database[userIndex] });
+});
+
+// Rota para deletar um usuário pelo ID
+app.delete('/users/:id', (request, response) => {
+  const userId = request.params.id;
+  const userIndex = database.findIndex(user => user.id === userId);
+
+  if (userIndex === -1) {
+    return response.status(404).json({ error: 'Usuário não encontrado' });
+  }
+
+  const deletedUser = database.splice(userIndex, 1);
+
+  response.json({ message: 'Usuário deletado com sucesso', deletedUser });
 });
 
 app.listen(port, () => {

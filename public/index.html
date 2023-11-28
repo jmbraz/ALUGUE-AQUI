@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>ALUGUE-AQUI - Trazendo soluções inovadoras para o seu negócio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap Icons via Bootstrap CDN -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 </head>
-
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-logo">
-            <span class="logo-text">ALUGUE-AQUI</span>
-
+            <span class="logo-text"><i class="bi bi-arrow-return-right"></i><a href="index.html">ALUGUE-AQUI</a></span>
         </div>
-
-        <!-- Menu Dropdown -->
         <div class="navbar-menu">
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">Descobrir <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-
+                    <a href="#" class="menu-link" id="dropdown-link">Descobrir <i class="bi bi-chevron-down"></i></a>
+                    <div class="dropdown-content" id="myDropdown">
                         <div class="row">
                             <div class="column">
                                 <h3>DESTAQUES</h3>
-                    
                                 <a href="#">Produtos Recentes</a>
                                 <a href="#">Mais Vendidos</a>
                                 <a href="#">Produtos em Alta</a>
@@ -37,9 +26,11 @@
                             <div class="column">
                                 <h3>CATEGORIA</h3>
                                 
-                                <a href="#">Câmera</a>
+                                <a href="#">Câmeras</a>
                                 <a href="#">Smartphones</a>
                                 <a href="#">Acessórios</a>
+                                <a href="#">Computadores</a>
+                                <a href="#">Impressoras</a>
                             </div>
                             <div class="column">
                                 <h3>MARCA</h3>
@@ -52,16 +43,12 @@
                 </li>
             </ul>
         </div>
-
-        <!-- Barra de Pesquisa -->
         <div class="navbar-search">
             <form class="search-form">
                 <img src="assets/search.svg">
                 <input class="search-input" type="search" placeholder="O que você está procurando?" aria-label="Search">
             </form>
         </div>
-
-        <!-- Login e Carrinho -->
         <div class="navbar-icons">
             <ul class="icon-list">
                 <li class="icon-item">
@@ -73,7 +60,6 @@
             </ul>
         </div>
     </nav>
-
     <div class="banner-container">
         <img src="./assets/1.jpg" alt="Banner" class="banner-image">
         <div class="overlay"></div>
@@ -83,8 +69,6 @@
           <a href="#" class="button">CONFIRA</a>
         </div>
       </div>
-
-
       <div class="services-subtitle">
         <h2>COMO FUNCIONA?</h2>
     </div>
@@ -110,85 +94,97 @@
                 <span>Receba os produtos e aproveite!</span>
             </div>
         </div>
-        
     </div>
-
     <div class="services-subtitle">
         <h2>PRODUTOS RECENTES</h2>
     </div>
     <div class="products">
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 1.png" alt="Produto 1">
-            <h3>Canon 5D Mark IV</h3>
-            <p><span class="price">R$XX.XX</span> <span class="small-text">/mês</span></p>
+            <a href="samsung-book-NP550XDA.html"><img src="./assets/samsungbook.png" alt="Samsung Book NP550XDA"></a>
+            <h3>Samsung Book NP550XDA</h3>
+            <p><span class="price">R$180.00</span> <span class="small-text">/mês</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 2.png" alt="Produto 2">
-            <h3>Sony Alpha 7 IV</h3>
-            <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
+            <a href="notebook-vaio-fe15.html"><img src="./assets/notebookvaio.png" alt="Notebook Vaio FE15"></a>
+            <h3>Notebook Vaio FE15</h3>
+            <p><span class="price">R$250.00</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Produto 2">
+            <a href="samsung-galaxy-s22-ultra.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Samsung Galaxy S22 Ultra"></a>
             <h3>Samsung Galaxy S22 Ultra</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 4.png" alt="Produto 2">
-            <h3>Gopro HERO 12 Black</h3>
-            <p><span class="price">R$XX.XX</span> <span class="small-text">/mês</span></p>
+            <a href="impressora-kyocera.html"><img src="./assets/impressorakyocera.png" alt="Multifuncional Kyocera Ecosys<"></a>
+            <h3>Multifuncional Kyocera Ecosys</h3>
+            <p><span class="price">R$150.00</span> <span class="small-text">/mês</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
-        
     </div>
-
-    
     <div class="services-subtitle">
         <h2>CÂMERAS</h2>
     </div>
-
     <div class="products">
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 1.png" alt="Produto 1">
+            <a href="canon-5d-mark.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 1.png" alt="Canon 5D Mark IV"></a>
             <h3>Canon 5D Mark IV</h3>
-            <p><span class="price">R$XX.XX</span> <span class="small-text">/mês</span></p>
+            <p><span class="price">R$150.00</span> <span class="small-text">/mês</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 2.png" alt="Produto 2">
+            <a href="sony-alpha-7-iv.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 2.png" alt="Sony Alpha 7 IV"></a>
             <h3>Sony Alpha 7 IV</h3>
-            <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
+            <p><span class="price">R$150.00</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
-        <div class="product empty"></div>
-        <div class="product empty"></div>
+                <div class="product">
+                    <a href="sony-vlogcam-zv-1f.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 6(3).png" alt="Sony Vlogcam ZV-1F"></a>
+            <h3>Sony Vlogcam ZV-1F</h3>
+            <p><span class="price">R$100.00</span> <span class="small-text">/dia</span></p>
+            <button class="add-to-cart">Adicionar ao aluguel</button>
+        </div>
+        <div class="product">
+            <a href="gopro-hero-12-black.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 4.png" alt="Gopro HERO 12 Black"></a>
+            <h3>Gopro HERO 12 Black</h3>
+            <p><span class="price">R$50.00</span> <span class="small-text">/dia</span></p>
+            <button class="add-to-cart">Adicionar ao aluguel</button>
+        </div>
         
     </div>
-
-
-
     <div class="services-subtitle">
         <h2>SMARTPHONES</h2>
     </div>
-    
     <div class="products">
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Produto 2">
+            
+            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Samsung Galaxy S22 Ultra">
             <h3>Samsung Galaxy S22 Ultra</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3 (2).png" alt="Produto 2">
+            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3 (2).png" alt="Motorola Moto G22">
             <h3>Motorola Moto G22</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <!-- Espaço vago -->
-        <div class="product empty"></div>
-        <div class="product empty"></div>
+        <div class="product">
+            <img src="./assets/iphone15preto.png" alt="Apple iPhone 15 Plus - Preto">
+            <h3>Apple iPhone 15 Plus - Preto</h3>
+            <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
+            <button class="add-to-cart">Adicionar ao aluguel</button>
+        </div>
+        <div class="product">
+            <img src="./assets/iphone15rosa.png" alt="Apple iPhone 15 - Rosa">
+            <h3>Apple iPhone 15 - Rosa</h3>
+            <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
+            <button class="add-to-cart">Adicionar ao aluguel</button>
+        </div>
+        
     </div>
 
     <div class="services-subtitle">
@@ -197,18 +193,20 @@
 
     <div class="products">
         <div class="product">
-            <img src="./assets/logo-sony.svg" alt="Sony">
+            <a href="#sony"><img src="./assets/logo-sony.svg" alt="Sony"></a>
         </div>
         <div class="product">
-            <img src="./assets/logo-panasonic.svg" alt="Panasonic">
+            <a href="#samsung"><img src="assets/Samsung_Logo.svg" alt="Samsung"></a>
         </div>
         <div class="product">
-            <img src="./assets/logo-canon.svg" alt="Canon">
+            <a href="#kyocera"><img src="assets/Kyocera_logo.svg" alt="Kyocera"></a>
         </div>
         <div class="product">
-            <img src="./assets/Samsung_Logo.svg" alt="Samsung">
+            <a href="#apple"><img src="assets/Logoapple.png" alt="Apple"></a>
         </div>
     </div>
+
+    
     <div class="plan-box">
         <input type="radio" id="section1" name="sections" checked value="section1">
         <div class="section" id="section1-content">
@@ -216,7 +214,7 @@
                 <h3>Olá!</h3>
             </div>
             <div class="plan-citation">
-                <p>Somos a equipe [NOME DA EQUIPE] que atua no ramo de tecnologia. Criamos o [NOME DO PROJETO], uma plataforma on-line onde empresas possam alugar equipamentos eletrônicos, como câmeras, smartphones, acessórios e outros dispositivos tecnológicos. Atendendo necessidades temporárias de seus projetos ou eventos.</p>
+                <p>Somos a empresa TECH-RENTAL que atua no ramo de tecnologia. Criamos o ALUGUE-AQUI, uma plataforma on-line onde empresas possam alugar equipamentos eletrônicos, como câmeras, smartphones, acessórios e outros dispositivos tecnológicos. Atendendo necessidades temporárias de seus projetos ou eventos.</p>
             </div>
         </div>
     
@@ -256,14 +254,25 @@
                 <i class="bi bi-telephone"></i>
               (21) 96888-6093<br>
               <i class="bi bi-envelope"></i>
-              email@email.com
+              jm.braz@hotmail.com
             </p>
           </div>
         </div>
         <hr>
-        <p style="text-align: center; font-size: 12px; font-weight: 400;">© 2023 AlugueAqui</p>
+        <p style="text-align: center; font-size: 12px; font-weight: 400;">© 2023 Tech-Rental</p>
       </footer>
       <script src="scripts/apiGithub.js"></script>
-
+      <script>
+        const dropdownLink = document.getElementById('dropdown-link');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          if (dropdownContent.style.display === 'flex') {
+            dropdownContent.style.display = 'none';
+          } else {
+            dropdownContent.style.display = 'flex';
+          }
+        });
+        </script>
 </body>
 </html>
