@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>ALUGUE-AQUI - Trazendo soluções inovadoras para o seu negócio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/fav" sizes="64x64">
+    <link rel="icon" type="image/png" href="assets/favicon-64x64.png" sizes="64x64">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
@@ -22,15 +20,14 @@
                         <div class="row">
                             <div class="column">
                                 <h3>DESTAQUES</h3>
-                                <a href="#">Produtos Recentes</a>
+                                <a href="#produtos-recentes">Produtos Recentes</a>
                                 <a href="#">Mais Vendidos</a>
                                 <a href="#">Produtos em Alta</a>
                             </div>
                             <div class="column">
                                 <h3>CATEGORIA</h3>
-
-                                <a href="#">Câmeras</a>
-                                <a href="#">Smartphones</a>
+                                <a href="#cameras">Câmeras</a>
+                                <a href="#smartphones">Smartphones</a>
                                 <a href="#">Acessórios</a>
                                 <a href="#">Computadores</a>
                                 <a href="#">Impressoras</a>
@@ -63,42 +60,69 @@
             </ul>
         </div>
     </nav>
-    <div class="banner-container">
-        <img src="./assets/1.jpg" alt="Banner" class="banner-image">
-        <div class="overlay"></div>
-        <div class="banner-content">
+    <div class="carousel">
+        <div class="banner-container">
+          <img src="./assets/1.jpg" alt="Banner" class="banner-image">
+          <div class="overlay"></div>
+          <div class="banner-content">
             <h2 class="promo-text">Smartphone de Última Geração</h2>
             <p class="description-text">Explore a inovação com os melhores smartphones das marcas mais renomadas.</p>
-            <a href="#" class="button">CONFIRA</a>
+            <a href="#smartphones" class="button">CONFIRA</a>
+          </div>
         </div>
-    </div>
+      
+        <div class="banner-container">
+          <img src="./assets/2.jpg" alt="Banner 2" class="banner-image">
+          <div class="overlay"></div>
+          <div class="banner-content">
+            <h2 class="promo-text">Bem-vindo!</h2>
+            <p class="description-text">Tenha acesso às últimas tecnologias sem nenhum investimento inicial.</p>
+            <a href="#" class="button">SAIBA MAIS</a>
+          </div>
+        </div>
+      
+        <div class="banner-container">
+          <img src="./assets/3.jpg" alt="Banner 3" class="banner-image">
+          <div class="overlay"></div>
+          <div class="banner-content">
+            <h2 class="promo-text">Capture cada momento com precisão e qualidade incomparáveis!</h2>
+            <p class="description-text">Descubra linha de câmeras de última geração, projetadas para atender às demandas das empresas mais exigentes.</p>
+            <a href="#cameras" class="button">DESCUBRA</a>
+          </div>
+        </div>
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
     <div class="services-subtitle">
         <h2>COMO FUNCIONA?</h2>
     </div>
     <div class="about">
         <div class="solution">
-            <img src="assets/solucao.svg" alt="Solução">
+            <img src="assets/solucao.svg" alt="Busca">
             <div class="solution-text">
                 <h2>BUSCA</h2>
                 <span>Encontre o que deseja alugar.</span>
             </div>
         </div>
         <div class="solution">
-            <img src="assets/solucao.svg" alt="Plataforma">
+            <img src="assets/escolha.svg" alt="Escolha">
             <div class="solution-text">
                 <h2>ESCOLHA</h2>
-                <span>Adicionar ao carrinho</span>
+                <span>Adicione ao carrinho produtos desejados.</span>
             </div>
         </div>
         <div class="solution">
-            <img src="assets/solucao.svg" alt="Focado em">
+            <img src="assets/retorno.svg" alt="Retorno">
             <div class="solution-text">
                 <h2>RETORNO</h2>
-                <span>Receba os produtos e aproveite!</span>
+                <span>Receba os produtos em sua empresa!</span>
             </div>
         </div>
     </div>
-    <div class="services-subtitle">
+    <div id="produtos-recentes" class="services-subtitle">
         <h2>PRODUTOS RECENTES</h2>
     </div>
     <div class="products">
@@ -123,13 +147,13 @@
         </div>
         <div class="product">
             <a href="impressora-kyocera.html"><img src="./assets/impressorakyocera.png"
-                    alt="Multifuncional Kyocera Ecosys<"></a>
+                    alt="Multifuncional Kyocera Ecosys"></a>
             <h3>Multifuncional Kyocera Ecosys</h3>
             <p><span class="price">R$150.00</span> <span class="small-text">/mês</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
     </div>
-    <div class="services-subtitle">
+    <div id="cameras" class="services-subtitle">
         <h2>CÂMERAS</h2>
     </div>
     <div class="products">
@@ -162,30 +186,30 @@
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
     </div>
-    <div class="services-subtitle">
+    <div id="smartphones" class="services-subtitle">
         <h2>SMARTPHONES</h2>
     </div>
     <div class="products">
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Samsung Galaxy S22 Ultra">
+            <a href="samsung-galaxy-s22-ultra.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3.png" alt="Samsung Galaxy S22 Ultra"></a>
             <h3>Samsung Galaxy S22 Ultra</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3 (2).png" alt="Motorola Moto G22">
+            <a href="motorola-moto-g22.html"><img src="./assets/LG3b758489-a1d9-4196-a161-b7dc026be0ff 3 (2).png" alt="Motorola Moto G22"></a>
             <h3>Motorola Moto G22</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/iphone15preto.png" alt="Apple iPhone 15 Plus - Preto">
+            <a href="iphone-15-plus-preto.html"><img src="./assets/iphone15preto.png" alt="Apple iPhone 15 Plus - Preto"></a>
             <h3>Apple iPhone 15 Plus - Preto</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
         </div>
         <div class="product">
-            <img src="./assets/iphone15rosa.png" alt="Apple iPhone 15 - Rosa">
+            <a href="iphone-15-rosa.html"><img src="./assets/iphone15rosa.png" alt="Apple iPhone 15 - Rosa"></a>
             <h3>Apple iPhone 15 - Rosa</h3>
             <p><span class="price">R$XX.XX</span> <span class="small-text">/dia</span></p>
             <button class="add-to-cart">Adicionar ao aluguel</button>
@@ -208,7 +232,7 @@
             <a href="#apple"><img src="assets/Logoapple.png" alt="Apple"></a>
         </div>
     </div>
-    <div class="plan-box">
+    <div id="sobre-nos" class="plan-box">
         <input type="radio" id="section1" name="sections" checked value="section1">
         <div class="section" id="section1-content">
             <div class="plan-image">
@@ -236,7 +260,7 @@
             <div class="footer-column">
                 <h3>Empresa</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#sobre-nos">Sobre Nós</a></li>
                     <li><a href="#">Trabalhe Conosco</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
                 </ul>
@@ -274,6 +298,51 @@
                 dropdownContent.style.display = 'flex';
             }
         });
+
+
+        let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName('banner-container');
+    const dots = document.getElementsByClassName('dot');
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(' active', '');
+    }
+
+    slides[slideIndex - 1].style.display = 'block';
+    dots[slideIndex - 1].className += ' active';
+  }
+
+  // Função para avançar automaticamente os slides a cada 5 segundos
+  function autoPlay() {
+    setInterval(() => {
+      showSlides((slideIndex += 1));
+    }, 5000); // Altere o tempo aqui para controlar o intervalo entre os slides (em milissegundos)
+  }
+
+  autoPlay(); // Iniciar o carrossel automaticamente
+
+  
+
     </script>
 </body>
 </html>

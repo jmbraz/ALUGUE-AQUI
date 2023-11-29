@@ -13,7 +13,7 @@ let database = [
     razaoSocial: "dev",
     email: "dev@alugueaqui.com.br",
     cnpj: "00000000000000",
-    telefone: "(21)96888-6093",
+    telefone: "(21) 968886093",
     senha: "dev@123456"
   },
 ];

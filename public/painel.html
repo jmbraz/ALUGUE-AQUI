@@ -44,7 +44,7 @@
 <body>
   <div class="container mt-5">
     <h1 class="text-center">Bem-vindo!</h1>
-    <p class="text-center">Estamos trabalhando nisso. <a href="https://github.com/jmbraz/">Aguarde por mais informações
+    <p class="text-center">Estamos trabalhando nisso. <a href="https://github.com/jmbraz/ALUGUE-AQUI">Aguarde por mais informações
         em breve!</a></p>
     <div class="spacer"></div>
     <h3>Usuários</h3>
@@ -162,15 +162,7 @@
       });
     }
 
-    function editUser(userId) {
-      fetch(`/users/${userId}`)
-        .then(response => response.json())
-        .then(user => {
-          console.log('Dados do usuário:', user);
-          fillEditForm(user); // Preencher formulário de edição com os dados do usuário
-        })
-        .catch(error => console.error('Erro ao buscar usuário:', error));
-    }
+
 
     function fillEditForm(user) {
       const editForm = document.getElementById('editUserForm');
@@ -186,12 +178,38 @@
       document.getElementById('userSenha').value = user.senha;
     }
 
-    // Função para enviar o formulário de edição de usuário
     function submitEditedUser() {
-      // Lógica para enviar os dados atualizados do usuário para o servidor
-      // Você pode usar fetch ou outro método para enviar os dados atualizados
-      // Por exemplo, coletar os dados dos campos do formulário e fazer uma requisição PUT ou PATCH
-    }
+  const userId = document.getElementById('userId').value;
+  const updatedUser = {
+    razaoSocial: document.getElementById('userRazaoSocial').value,
+    email: document.getElementById('userEmail').value,
+    cnpj: document.getElementById('userCnpj').value,
+    telefone: document.getElementById('userTelefone').value,
+    senha: document.getElementById('userSenha').value
+  };
+
+  fetch(`/users/${userId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updatedUser)
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Usuário atualizado:', data);
+      // Fechar o formulário de edição
+      closeEditForm();
+      // Atualizar a tabela de usuários
+      getUsers(); // Isso irá buscar novamente os usuários e atualizar a tabela na interface
+    })
+    .catch(error => console.error('Erro ao editar usuário:', error));
+}
+
+function closeEditForm() {
+  const editForm = document.getElementById('editUserForm');
+  editForm.style.display = 'none'; // Oculta o formulário de edição
+}
   </script>
 </body>
 </html>

@@ -7,7 +7,7 @@ window.onload = function() {
     if (loggedIn) {
         // Obter o nome do usuário (razaoSocial) e exibir a saudação
         const nomeUsuario = /* Obter o nome do usuário */;
-        greetingDiv.innerHTML = `Olá, ${nomeUsuario}!`;
+        greetingDiv.innerHTML = `Olá, ${razaoSocial}!`;
     } else {
         // Se não estiver autenticado, redirecionar para a página de login
         window.location.href = '../login.html'; // Corrigindo o caminho do redirecionamento

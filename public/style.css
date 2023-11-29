@@ -325,6 +325,50 @@ height: 14px;
   background-color: rgba(0, 0, 0, 0.5); /* Cor e opacidade do overlay */
 }
 
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Outros estilos necessários para a exibição correta dos slides */
+}
+
+.banner-container {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  /* Estilos para os slides do carousel */
+}
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  position: relative;
+  top: 25px;
+  left: 0; /* Ajuste a posição inicial para 0 */
+  background-color: rgba(0, 0, 0, 0.32);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 8px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dot:hover{
+  background-color: rgba(0, 0, 0, 0.69);
+
+}
+
+/* Adicione um tamanho ao dot para torná-lo visível */
+.dot::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.32);
+}
 
 .about {
   display: flex;
@@ -493,6 +537,7 @@ height: 14px;
   padding: 15px 19.5px 13px;
   font-weight: 600;
   letter-spacing: 0.45px;
+  cursor: pointer;
 }
 
 /* Restante dos seus estilos CSS permanece inalterado */
