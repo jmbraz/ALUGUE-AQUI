@@ -1,4 +1,4 @@
-# Trabalho de Conclusão do Curso Programador Front-End - Firjan SENAI Caxias
+# TCC Programador Front-End - Firjan SENAI Caxias
 
 ## Descrição
 
