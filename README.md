@@ -76,6 +76,7 @@ Se você deseja contribuir com ideias, código ou feedback para essas funcionali
 
 ## Colaboradores
 
-- [Igor Santana](https://github.com/NaoExisto)
 - [Alephe Louzada](https://github.com/Alephelouzada)
 - [Daniel Assunção](https://github.com/Danielassuncao99)
+- [Igor Santana](https://github.com/NaoExisto)
+- [João Marcos](https://github.com/jmbraz)
