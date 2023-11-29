@@ -38,6 +38,7 @@ Durante o desenvolvimento deste projeto, buscamos inspirações em várias fonte
 - **Amazon**
 - **LensRentals**
 - **Behance**
+- **SISTOK**
 
 ## Prévia
 ![Captura de Tela do ALUGUE-AQUI](https://github.com/jmbraz/ALUGUE-AQUI/raw/main/Captura-ALUGUE-AQUI.png)
