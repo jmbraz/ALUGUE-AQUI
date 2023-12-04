@@ -29,7 +29,7 @@ Durante o desenvolvimento deste projeto, enfrentamos e superamos os seguintes de
 
 No processo de criação, o Figma desempenhou um papel fundamental. Desde os primeiros esboços até a finalização do design.
 
-Você pode conferir o design da interface no [link do Figma](https://www.figma.com/community/file/1311617896894508958) para ter uma visão detalhada de como o projeto se parece.
+Você pode conferir o design da interface no [link do Figma](https://www.figma.com/community/file/1313330990454220510) para ter uma visão detalhada de como o projeto se parece.
 
 ## Inspiracões
 
@@ -81,6 +81,4 @@ Se você deseja contribuir com ideias, código ou feedback para essas funcionali
 - [Daniel Assunção](https://github.com/Danielassuncao99)
 - [Igor Santana](https://github.com/NaoExisto)
 - [João Marcos](https://github.com/jmbraz)
-# ALUGUE-AQUI
-# ALUGUE-AQUI
-# ALUGUE-AQUI
+
