@@ -1,6 +1,11 @@
 /* Importando fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap');
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Reset CSS */
 * {
   margin: 0;
